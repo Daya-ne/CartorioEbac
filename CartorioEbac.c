@@ -59,7 +59,9 @@ int registro()    //função responsavel por cadastrar os uduarios no sistema
 	fprintf(file,"\n\n"); 
 	fclose(file);
 	
+	printf("\nCadastro finalizado com sucesso!\n");
 	system("pause");	// Pausa o programa para o usuario ler a mensagem
+	system("cls");
 	
 }
 int consulta()     //inicio da funcao consulta atraves do cpf
@@ -95,22 +97,25 @@ int consulta()     //inicio da funcao consulta atraves do cpf
 }
 int deletar()
 {
-	
+	setlocale(LC_ALL, "Portuguese_Brasil");//Definindo o edioma
+   
 	char cpf[40];
 	
 	printf("Digite o CPF a ser cadastrado: \n");
 	scanf("%s,",cpf);
 	
-	remove(cpf);
+	remove(cpf); //responsavel por deletar 
 	
 	FILE *file;
 	file = fopen(cpf, "r");
 	
 	if(file == NULL)   
 	{
-		printf("Excluido com sucesso!\n");
+		printf("CPF excluido com sucesso.\n");
 	    system("pause");
 	}
+	
+	fclose(file);
 
 }
 
