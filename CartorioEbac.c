@@ -96,9 +96,7 @@ int consulta()     //inicio da funcao consulta atraves do cpf
 	
 }
 int deletar()
-{
-	setlocale(LC_ALL, "Portuguese_Brasil");//Definindo o edioma
-   
+{ 
 	char cpf[40];
 	
 	printf("Digite o CPF a ser cadastrado: \n");
@@ -111,10 +109,9 @@ int deletar()
 	
 	if(file == NULL)   
 	{
-		printf("CPF excluido com sucesso.\n");
+		printf("CPF excluido com sucesso!\n");
 	    system("pause");
 	}
-	
 	fclose(file);
 
 }
